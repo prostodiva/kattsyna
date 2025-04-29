@@ -1,8 +1,12 @@
+import ThreeScene from './ThreeScene';
+
 const Home = () => {
     return (
         <section>
             <div className="container">
-                <h1>Home</h1>
+                <div className="mt-8">
+                    <ThreeScene />
+                </div>
             </div>
         </section>
     )
