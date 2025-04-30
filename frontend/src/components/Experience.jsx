@@ -1,4 +1,4 @@
-import  SectionWrapper from '../hook/SectionWrapper';
+// import  SectionWrapper from '../hook/SectionWrapper';
 
 const Experience = () => {
     return (
@@ -11,4 +11,6 @@ const Experience = () => {
     );
 };
 
-export default SectionWrapper(Experience, 'experience');
+export default Experience;
+
+// export default SectionWrapper(Experience, 'experience');

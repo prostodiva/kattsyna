@@ -1,4 +1,4 @@
-import  SectionWrapper from '../hook/SectionWrapper';
+// import  SectionWrapper from '../hook/SectionWrapper';
 
 const Portfolio = () => {
     return (
@@ -11,4 +11,5 @@ const Portfolio = () => {
     );
 };
 
-export default SectionWrapper(Portfolio, 'portfolio');
+export default Portfolio;
+// export default SectionWrapper(Portfolio, 'portfolio');
