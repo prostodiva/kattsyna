@@ -1,4 +1,4 @@
-// import  SectionWrapper  from "../hook/SectionWrapper"
+import  SectionWrapper  from "../hook/SectionWrapper"
 
 const Contact = () => {
     return (
@@ -11,6 +11,6 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+//export default Contact;
 
-// export default SectionWrapper(Contact, "Contact");
+export default SectionWrapper(Contact, "Contact");
