@@ -3,12 +3,14 @@ import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Portfolio from "../components/Portfolio";
 import { useRef } from "react";
+import Navbar from "../components/NavBar";
 
 const HomePage = () => {
     const wrapperRef = useRef(null);
 
     return (
             <div className='relative z-0 bg-primary'>
+                <Navbar />
                 <div className='wrapper' ref={wrapperRef}>
                     <div id="hero" className='z-10'>
                         <Hero scrollContainer={wrapperRef} />

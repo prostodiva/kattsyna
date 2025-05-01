@@ -4,6 +4,25 @@ import {
     club,
 } from "../assets";
 
+export const navLinks = [
+    {
+        id: "hero",
+        title: "Hero",
+    },
+    {
+        id: "portfolio",
+        title: "Portfolio",
+    },
+    {
+        id: "experience",
+        title: "Experience",
+    },
+    {
+        id: "contact",
+        title: "Contact",
+    },
+];
+
 const portfolio = [
     {
         name: "Modern Club Management Platform",
