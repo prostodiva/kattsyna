@@ -22,8 +22,8 @@ const Spaceman = ({ scale, position, rotation }) => {
 };
 
 const SpacemanCanvas = ({ scrollContainer }) => {
-    const [rotationX, setRotationX] = useState(0,2,0);
-    const [rotationY, setRotationY] = useState(2,2,2);
+    const [rotationX, setRotationX] = useState(2,2,0);
+    const [rotationY, setRotationY] = useState(2,6,2);
     const [scale, setScale] = useState([2, 2, 2]);
     const [position, setPosition] = useState([0, 0, 0]);
 
