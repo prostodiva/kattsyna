@@ -38,8 +38,7 @@ const ProjectCard = ({
                     <img
                         src={image}
                         alt='project_image'
-                        className='w-full h-full object-contain scale-75'
-                        style={{ transform: 'scale(0.5)' }}
+                        className='w-full h-full object-contain'
                     />
                 </div>
             </div>

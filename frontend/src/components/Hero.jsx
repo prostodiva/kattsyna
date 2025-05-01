@@ -39,7 +39,7 @@ const Hero = ({ scrollContainer }) => {
             <img className="parallax__crater" src={crater} alt="" />
             <img className="parallax__sun" src={sun} alt="" />
 
-            <div style={{ zIndex: 20 }}>
+            <div className="absolute inset-0 w-full h-full" style={{ zIndex: 20 }}>
                 <SpacemanCanvas scrollContainer={scrollContainer} />
             </div>
         </section>

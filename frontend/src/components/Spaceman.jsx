@@ -1,5 +1,5 @@
-import { useAnimations, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 import spacemanScene from "../assets/3d/spaceman.glb";
 
@@ -14,18 +14,39 @@ const Spaceman = ({ scale, position, rotation }) => {
         }
     }, [actions]);
 
+    useFrame((state, delta) => {
+        if (spacemanRef.current) {
+            spacemanRef.current.rotation.y += delta * 0.1;
+        }
+    });
+
     return (
-        <mesh ref={spacemanRef} position={position} scale={scale} rotation={rotation}>
+        <mesh 
+            ref={spacemanRef} 
+            position={position} 
+            scale={scale} 
+            rotation={rotation}
+        >
             <primitive object={scene} />
         </mesh>
     );
 };
 
 const SpacemanCanvas = ({ scrollContainer }) => {
-    const [rotationX, setRotationX] = useState(2,2,0);
-    const [rotationY, setRotationY] = useState(2,6,2);
-    const [scale, setScale] = useState([2, 2, 2]);
-    const [position, setPosition] = useState([0, 0, 0]);
+    const [rotationX, setRotationX] = useState(0);
+    const [rotationY, setRotationY] = useState(0);
+    const [scale, setScale] = useState([3, 3, 3]);
+    const [position, setPosition] = useState([2, 2, 0]);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,20 +59,20 @@ const SpacemanCanvas = ({ scrollContainer }) => {
 
         const handleResize = () => {
             if (window.innerWidth < 768) {
-                setScale([1,1,1]);
+                setScale([1, 1, 1]);
                 setPosition([0.2, -0.1, 0]);
             } else if (window.innerWidth < 1024) {
-                setScale([1.33,1.33,1.33]);
+                setScale([1.33, 1.33, 1.33]);
                 setPosition([0.2, -0.3, 0]);
             } else if (window.innerWidth < 1280) {
-                setScale([1.5,1.5,1.5]);
+                setScale([1.5, 1.5, 1.5]);
                 setPosition([0.2, -0.4, 0]);
             } else if (window.innerWidth < 1536) {
-                setScale([1.66,1.66,1.66]);
+                setScale([1.66, 1.66, 1.66]);
                 setPosition([0.2, -0.5, 0]);
             } else {
-                setScale([2,2,2]);
-                setPosition([0.2,-0.7,0]);
+                setScale([2, 2, 2]);
+                setPosition([0.2, -0.7, 0]);
             }
         };
 
@@ -67,10 +88,10 @@ const SpacemanCanvas = ({ scrollContainer }) => {
 
     return (
         <Canvas
-            className='w-full h-screen bg-transparent z-10'
+            className='w-full h-screen bg-transparent'
             camera={{
                 position: [0, 2, 10],
-                fov: 50,
+                fov: 60,
                 near: 0.1,
                 far: 1000
             }}
@@ -81,6 +102,15 @@ const SpacemanCanvas = ({ scrollContainer }) => {
                 <pointLight position={[10, 5, 10]} intensity={2} />
                 <spotLight position={[0, 50, 10]} angle={0.15} penumbra={1} intensity={2} />
                 <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
+
+                {!isMobile && (
+                    <OrbitControls 
+                        enableZoom={false} 
+                        enablePan={false}
+                        minPolarAngle={Math.PI / 4}
+                        maxPolarAngle={Math.PI / 2}
+                    />
+                )}
 
                 <Spaceman
                     scale={scale}
