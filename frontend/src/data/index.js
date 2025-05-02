@@ -23,6 +23,7 @@ export const navLinks = [
     },
 ];
 
+
 const portfolio = [
     {
         name: "Modern Club Management Platform",

@@ -1,10 +1,11 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { portfolio } from "../data";
+import { portfolio } from "../data/index";
 import { SectionWrapper } from '../hook';
-import { styles } from "../styles";
-import { fadeIn, textVariant } from "../utils/motion";
+import { styles } from "../styles/index";
+import { fadeIn, textVariant } from "@/utils/motion";
+import "../../index.css";
 
 const ProjectCard = ({
                          index,

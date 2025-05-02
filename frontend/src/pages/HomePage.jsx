@@ -1,32 +1,29 @@
-import Hero from "../components/Hero";
+import { useRef } from "react";
 import Contact from "../components/Contact";
 import Experience from "../components/Experience";
+import Hero from "../components/Hero";
 import Portfolio from "../components/Portfolio";
-import { useRef } from "react";
-import Navbar from "../components/NavBar";
 
 const HomePage = () => {
     const wrapperRef = useRef(null);
 
     return (
-            <div className='relative z-0 bg-primary'>
-                <Navbar />
-                <div className='wrapper' ref={wrapperRef}>
-                    <div id="hero" className='z-10'>
-                        <Hero scrollContainer={wrapperRef} />
-                    </div>
-                    <div id="portfolio" className='relative z-30 bg-primary mt-[-2px]'>
-                        <Portfolio />
-                    </div>
-                    <div id="experience" className='relative z-30 bg-primary'>
-                        <Experience />
-                    </div>
-                    <div id="contact" className='relative z-30 bg-primary'>
-                        <Contact />
-                    </div>
-                </div>
+        <div className='relative z-0 bg-primary'>
+            <div className='wrapper' ref={wrapperRef}>
+                <section id="hero" className='z-10'>
+                    <Hero scrollContainer={wrapperRef} />
+                </section>
+                <section id="portfolio" className='relative z-30 bg-primary mt-[-2px]'>
+                    <Portfolio />
+                </section>
+                <section id="experience" className='relative z-30 bg-primary'>
+                    <Experience />
+                </section>
+                <section id="contact" className='relative z-30 bg-primary'>
+                    <Contact />
+                </section>
             </div>
-
+        </div>
     );
 };
 

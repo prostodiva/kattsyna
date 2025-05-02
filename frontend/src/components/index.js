@@ -5,7 +5,7 @@ import Portfolio from './Portfolio';
 
 export {
     Contact,
-    Experience, Hero,
-    Portfolio
+    Experience,
+    Hero, Portfolio
 };
 
