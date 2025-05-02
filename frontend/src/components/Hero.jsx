@@ -6,7 +6,7 @@ import planets from '../assets/parallax/2Planets.svg';
 import mountain1 from '../assets/parallax/3Mountain.svg';
 import mountain2 from '../assets/parallax/4Mountain.svg';
 import crater from '../assets/parallax/5Crater.svg';
-import sun from '../assets/parallax/6Sun.svg';
+import sun from '../assets/parallax/6Sun1.svg';
 import Position from './Position';
 import SpacemanCanvas from './Spaceman';
 
