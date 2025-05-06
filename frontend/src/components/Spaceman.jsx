@@ -1,7 +1,7 @@
 import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
-import spacemanScene from "../assets/3d/spaceman.glb";
+import spacemanScene from "../assets/3d/robot.glb";
 
 const Spaceman = ({ scale, position, rotation }) => {
     const spacemanRef = useRef();
@@ -21,10 +21,10 @@ const Spaceman = ({ scale, position, rotation }) => {
     });
 
     return (
-        <mesh 
-            ref={spacemanRef} 
-            position={position} 
-            scale={scale} 
+        <mesh
+            ref={spacemanRef}
+            position={position}
+            scale={scale}
             rotation={rotation}
         >
             <primitive object={scene} />
@@ -104,8 +104,8 @@ const SpacemanCanvas = ({ scrollContainer }) => {
                 <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
 
                 {!isMobile && (
-                    <OrbitControls 
-                        enableZoom={false} 
+                    <OrbitControls
+                        enableZoom={false}
                         enablePan={false}
                         minPolarAngle={Math.PI / 4}
                         maxPolarAngle={Math.PI / 2}

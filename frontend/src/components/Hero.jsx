@@ -1,15 +1,13 @@
 import { setupParallax } from '@/utils/parallax';
 import { useEffect } from 'react';
 import "../../index.css";
-import stars from '../assets/parallax/1Stars.svg';
-import planets from '../assets/parallax/2Planets.svg';
-import mountain1 from '../assets/parallax/3Mountain.svg';
-import mountain2 from '../assets/parallax/4Mountain.svg';
-import crater from '../assets/parallax/5Crater.svg';
-import sun from '../assets/parallax/6Sun1.svg';
 import Position from './Position';
 import SpacemanCanvas from './Spaceman';
 
+import bg from '../assets/parallax/back2.svg';
+import wires from '../assets/parallax/wires.svg';
+import floor from '../assets/parallax/floor.svg';
+import ac from '../assets/parallax/ac.svg';
 
 const Hero = ({ scrollContainer }) => {
     useEffect(() => {
@@ -27,18 +25,15 @@ const Hero = ({ scrollContainer }) => {
                     <Position />
                 </div>
                 <div>
-                    <div className="font-bold text-[20px] sm:text-[30px] md:text-[36px] 2xl:text-[46px] leading-[1.4] streaky-glow text-white">
-                       <p>I love crafting <br /> captivating experiences for the digital world to savor.</p>
+                    <div className="font-bold text-[14px] sm:text-[18px] md:text-[20px] 2xl:text-[24px] leading-[1.4] streaky-glow text-white -mt-48 sm:-mt-56 -ml-4 sm:-ml-8">
+                       <p>Crafting efficient code <br /> that solves real-world problems.</p>
                     </div>
                 </div>
             </div>
-
-            <img className="parallax__stars" src={stars} alt="" />
-            <img className="parallax__planets" src={planets} alt="" />
-            <img className="parallax__mountain1" src={mountain1} alt="" />
-            <img className="parallax__mountain2" src={mountain2} alt="" />
-            <img className="parallax__crater" src={crater} alt="" />
-            <img className="parallax__sun" src={sun} alt="" />
+            <img className="parallax__bg" src={bg} alt="" />
+            <img className="parallax__wires" src={wires} alt="" />
+            <img className="parallax__floor" src={floor} alt="" />
+            <img className="parallax__ac" src={ac} alt="" />
 
             <div className="absolute inset-0 w-full h-full" style={{ zIndex: 20 }}>
                 <SpacemanCanvas scrollContainer={scrollContainer} />

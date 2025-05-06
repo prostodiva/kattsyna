@@ -42,7 +42,7 @@ const NavBar = ({ children }) => {
 
     return (
         <nav
-    className="w-full flex items-center bg-gradient-to-b from-black sm:bg-none p-8 sm:px-16 sm:py-10 fixed z-40 pointer-events-none"
+    className="w-full top-0 flex items-center bg-gradient-to-b from-black sm:bg-none p-4 sm:px-16 sm:py-6 fixed z-40 pointer-events-none"
         >
             <ul className='list-none hidden sm:flex flex-row gap-5'>
                 {navLinks.map((nav) => (

@@ -56,35 +56,34 @@
     width: 100%;
 }
 
-
-.parallax__stars {
+.parallax__back2 {
     --parallax-speed: 0.32;
     z-index: 2;
 }
 
-.parallax__planets {
+.parallax__ac {
     --parallax-speed: 0.29;
     z-index: 5;
+    width: 70px;
+    max-width: 70px;
+    padding-top: 220px;
+    height: auto;
+    margin-left: 320px;
 }
 
-.parallax__sun {
-    --parallax-speed: 0.27;
-    z-index: 4;
-}
 
-.parallax__mountain1 {
+.parallax__floor {
     --parallax-speed: 0.25;
     z-index: 5;
+    padding-top: 700px
 }
 
-.parallax__mountain2 {
+.parallax__wires {
     --parallax-speed: 0.14;
-    z-index: 6;
+    z-index: 8;
+    padding-top: 600px;
 }
 
-.parallax__crater {
-    z-index: 7;
-}
 
 .parallax__content {
     --parallax-speed: 0.21;

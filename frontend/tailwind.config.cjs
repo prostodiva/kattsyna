@@ -9,10 +9,10 @@ module.exports = {
                 'montserrat': ['Montserrat', 'sans-serif'],
             },
             colors: {
-                primary: "#011825",
-                secondary: "#F0EFEB",
-                tertiary: "#0D3056",
-                quaternary: "#1689C8",
+                primary: "#afa3c5",
+                secondary: "#211933",
+                tertiary: "#a98ec0",
+                quaternary: "#a98ec0",
             },
             screens: {
                 'xs': "450px",
