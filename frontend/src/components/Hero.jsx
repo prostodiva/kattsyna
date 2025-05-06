@@ -10,6 +10,7 @@ import sun from '../assets/parallax/6Sun1.svg';
 import Position from './Position';
 import SpacemanCanvas from './Spaceman';
 
+
 const Hero = ({ scrollContainer }) => {
     useEffect(() => {
         const cleanup = setupParallax();

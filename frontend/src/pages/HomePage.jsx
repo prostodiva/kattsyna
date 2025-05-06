@@ -3,6 +3,7 @@ import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Hero from "../components/Hero";
 import Portfolio from "../components/Portfolio";
+import NavBar from "../components/NavBar";
 
 const HomePage = () => {
     const wrapperRef = useRef(null);
@@ -10,6 +11,9 @@ const HomePage = () => {
     return (
         <div className='relative z-0 bg-primary'>
             <div className='wrapper' ref={wrapperRef}>
+                <section id="navbar" className="z-10">
+                    <NavBar />
+                </section>
                 <section id="hero" className='z-10'>
                     <Hero scrollContainer={wrapperRef} />
                 </section>

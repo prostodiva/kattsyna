@@ -56,6 +56,7 @@
     width: 100%;
 }
 
+
 .parallax__stars {
     --parallax-speed: 0.32;
     z-index: 2;
@@ -63,7 +64,7 @@
 
 .parallax__planets {
     --parallax-speed: 0.29;
-    z-index: 3;
+    z-index: 5;
 }
 
 .parallax__sun {
