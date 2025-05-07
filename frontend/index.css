@@ -19,6 +19,11 @@
     display: block;
 }
 
+.hash-span#hero {
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 .canvas-loader {
     font-size: 10px;
     width: 1em;
@@ -31,7 +36,7 @@
 }
 
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
@@ -40,7 +45,10 @@
 .parallax {
     position: relative;
     min-height: 75vh;
-    width: 100%;
+    width: 100vw;
+    max-width: none;
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
     display: grid;
     grid-template-areas: "stack";
 }
@@ -55,75 +63,43 @@
     width: 100%;
 }
 
-.parallax__back2 {
+.parallax__bg {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
     --parallax-speed: 0.32;
     z-index: 2;
 }
 
 
 .parallax__floor {
+    position: absolute;
     --parallax-speed: 0.25;
     z-index: 5;
     padding-top: 700px
 }
 
 
-
 .parallax__content {
-    --parallax-speed: 0.21;
-    z-index: 4;
+    --parallax-speed: 210;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-left: 60px;
-    padding-bottom: 340px;
-    font-family: "Roboto Thin", sans-serif;
 }
 
-.parallax__content h1 {
-    font-size: 90px;
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+.parallax__content_h1
+{
+    margin-left: 50px;
 }
 
-.parallax__content p {
-    padding-left: 500px;
-    padding-top: 100px;
+.parallax__content_p {
+   top: 150px;
+    left: 200px;
+
 }
 
-@media (min-width: 640px) {
-    .parallax__content h1 {
-        font-size: 100px;
-    }
-}
-
-@media (min-width: 768px) {
-    .parallax__content h1 {
-        font-size: 110px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .parallax__content h1 {
-        font-size: 120px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .parallax__content h1 {
-        font-size: 130px;
-    }
-}
-
-@media (min-width: 1536px) {
-    .parallax__content h1 {
-        font-size: 140px;
-    }
-}
 
 @media (min-width: 1024px) {
     .parallax__content {
@@ -131,7 +107,6 @@
         text-align: left;
     }
 }
-
 
 @keyframes parallax {
     to {
@@ -272,25 +247,4 @@
         -2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
         -1.8em -1.8em 0 0em #ffffff;
     }
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-.portfolio-container {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-.portfolio-container > * {
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
 }

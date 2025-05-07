@@ -28,7 +28,7 @@ const ProjectCard = ({ index, name, description, image }) => {
             animate={controls}
             initial="hidden"
             variants={fadeIn("up", "spring", 0, 0.75)}
-            className="flex-shrink-0 w-full md:w-[400px] h-full flex flex-col gap-5 bg-primary/50 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="flex-shrink-0 w-full md:w-[400px] h-full flex flex-col gap-5 bg-tertiary/50 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
             <div className='relative w-full flex justify-center items-center group'>
                 <div className='w-full aspect-square flex items-center justify-center overflow-hidden rounded-lg'>
@@ -51,22 +51,31 @@ const ProjectCard = ({ index, name, description, image }) => {
 const Portfolio = () => {
     const [current, setCurrent] = useState(0);
     const cardRefs = useRef([]);
+    const [hasInteracted, setHasInteracted] = useState(false);
 
     const moveLeft = () => {
-        setCurrent((prev) => (prev > 0 ? prev - 1 : portfolio.length - 1));
+        setCurrent((prev) => {
+            setHasInteracted(true);
+            return prev > 0 ? prev - 1 : portfolio.length - 1;
+        });
     };
 
     const moveRight = () => {
-        setCurrent((prev) => (prev < portfolio.length - 1 ? prev + 1 : 0));
+        setCurrent((prev) => {
+            setHasInteracted(true);
+            return prev < portfolio.length - 1 ? prev + 1 : 0;
+        });
     };
 
     useEffect(() => {
-        cardRefs.current[current]?.scrollIntoView({
-            behavior: "smooth",
-            inline: "center",
-            block: "nearest"
-        });
-    }, [current]);
+        if (hasInteracted) {
+            cardRefs.current[current]?.scrollIntoView({
+                behavior: "smooth",
+                inline: "center",
+                block: "nearest"
+            });
+        }
+    }, [current, hasInteracted]);
 
     return (
         <div className="relative">

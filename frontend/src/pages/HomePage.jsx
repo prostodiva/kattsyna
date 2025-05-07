@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import Portfolio from "../components/Portfolio";
 import NavBar from "../components/NavBar";
 
+
 const HomePage = () => {
     const wrapperRef = useRef(null);
 
