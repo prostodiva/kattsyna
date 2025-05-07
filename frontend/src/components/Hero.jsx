@@ -2,12 +2,9 @@ import { setupParallax } from '@/utils/parallax';
 import { useEffect } from 'react';
 import "../../index.css";
 import Position from './Position';
-import SpacemanCanvas from './Spaceman';
 
-import bg from '../assets/parallax/back2.svg';
-import wires from '../assets/parallax/wires.svg';
+import bg from '../assets/parallax/back.svg';
 import floor from '../assets/parallax/floor.svg';
-import ac from '../assets/parallax/ac.svg';
 
 const Hero = ({ scrollContainer }) => {
     useEffect(() => {
@@ -31,13 +28,8 @@ const Hero = ({ scrollContainer }) => {
                 </div>
             </div>
             <img className="parallax__bg" src={bg} alt="" />
-            <img className="parallax__wires" src={wires} alt="" />
             <img className="parallax__floor" src={floor} alt="" />
-            <img className="parallax__ac" src={ac} alt="" />
 
-            <div className="absolute inset-0 w-full h-full" style={{ zIndex: 20 }}>
-                <SpacemanCanvas scrollContainer={scrollContainer} />
-            </div>
         </section>
     );
 };

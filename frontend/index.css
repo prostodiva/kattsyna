@@ -40,7 +40,6 @@
 .parallax {
     position: relative;
     min-height: 75vh;
-    min-width: 2000px;
     width: 100%;
     display: grid;
     grid-template-areas: "stack";
@@ -61,16 +60,6 @@
     z-index: 2;
 }
 
-.parallax__ac {
-    --parallax-speed: 0.29;
-    z-index: 5;
-    width: 70px;
-    max-width: 70px;
-    padding-top: 220px;
-    height: auto;
-    margin-left: 320px;
-}
-
 
 .parallax__floor {
     --parallax-speed: 0.25;
@@ -78,11 +67,6 @@
     padding-top: 700px
 }
 
-.parallax__wires {
-    --parallax-speed: 0.14;
-    z-index: 8;
-    padding-top: 600px;
-}
 
 
 .parallax__content {
