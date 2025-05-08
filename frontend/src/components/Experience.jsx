@@ -1,14 +1,27 @@
-import  SectionWrapper from '../hook/SectionWrapper';
+import { textVariant } from "@/utils/motion";
+import { motion } from "framer-motion";
+import SectionWrapper from '../hook/SectionWrapper';
 
 const Experience = () => {
     return (
-        <div className="section">
-            <h1>Experience</h1>
-            <p>
-                Here is an overview of my work experience in the field of software development and related industries.
-            </p>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 relative z-10 bg-primary'>
+            <motion.div variants={textVariant()} className="relative z-20 bg-primary py-4">
+                <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Experience</h2>
+            </motion.div>
+
+            <div className='mt-10 md:mt-20 flex flex-col gap-8 relative z-20'>
+                <div className='bg-secondary p-8 rounded-3xl'>
+                    <h3 className='text-white text-2xl font-bold mb-4'>Software Engineer</h3>
+                    <p className='text-gray-300'>Full-stack development with focus on React, Node.js, and modern web technologies.</p>
+                </div>
+                
+                <div className='bg-secondary p-8 rounded-3xl'>
+                    <h3 className='text-white text-2xl font-bold mb-4'>Full-Stack Developer</h3>
+                    <p className='text-gray-300'>Building scalable web applications and implementing efficient solutions.</p>
+                </div>
+            </div>
         </div>
     );
 };
 
-export default SectionWrapper(Experience, 'experience');
+export default SectionWrapper(Experience, "experience");

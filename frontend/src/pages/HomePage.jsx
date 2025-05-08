@@ -2,8 +2,8 @@ import { useRef } from "react";
 import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Hero from "../components/Hero";
-import Portfolio from "../components/Portfolio";
 import NavBar from "../components/NavBar";
+import Portfolio from "../components/Portfolio";
 
 
 const HomePage = () => {
@@ -18,13 +18,13 @@ const HomePage = () => {
                 <section id="hero" className='z-10'>
                     <Hero scrollContainer={wrapperRef} />
                 </section>
-                <section id="portfolio" className='relative z-30 bg-primary mt-[-2px]'>
+                <section id="portfolio" className='relative z-20 bg-primary mt-[-2px]'>
                     <Portfolio />
                 </section>
-                <section id="experience" className='relative z-30 bg-primary'>
+                <section id="experience" className='relative z-30 bg-primary mt-[-2px]'>
                     <Experience />
                 </section>
-                <section id="contact" className='relative z-30 bg-primary'>
+                <section id="contact" className='relative z-40 bg-primary'>
                     <Contact />
                 </section>
             </div>

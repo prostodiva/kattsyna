@@ -1,18 +1,13 @@
 import { fadeIn, textVariant } from "@/utils/motion";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import "../../index.css";
 import { portfolio } from "../data/index";
 import { SectionWrapper } from '../hook';
 import { styles } from "../styles/index";
 
-const ProjectCard = ({
-                         index,
-                         name,
-                         description,
-                         image,
-                     }) => {
+const ProjectCard = ({ index, name, description, image }) => {
     const controls = useAnimation();
     const { ref, inView } = useInView({
         threshold: 0.1,
@@ -24,59 +19,48 @@ const ProjectCard = ({
         }
     }, [controls, inView]);
 
-    const isEven = index % 2 === 0;
-
-
-
     return (
         <motion.div
             ref={ref}
             animate={controls}
             initial="hidden"
             variants={fadeIn("up", "spring", 0, 0.75)}
-            className={`w-full mt-[-2px] flex flex-col md:flex-row ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-5`}
+            className="w-full flex flex-col items-center"
         >
-            <div className='relative w-full md:w-3/5'>
+            <div className='relative w-full flex flex-col items-center'>
                 <img
                     src={image}
                     alt='project_image'
-                    className='w-full h-auto object-cover md:rounded-3xl'
+                    className='w-[300px] h-[200px] object-cover rounded-3xl'
                 />
-            </div>
-
-            <div className={`w-full md:w-2/5 px-6 md:p-16 flex flex-col justify-center ${isEven ? "text-left md:text-left" : "text-left md:text-right"}`}>
-                <h3 className='text-white font-medium text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl lg:text-5xl leading-tight'>{name}</h3>
-                <p className='mt-4 text-secondary text-sm sm:text-xs md:text-sm lg:text-md xl:text-lg 2xl:text-xl'>{description}</p>
+                <div className='mt-6 text-center w-full max-w-[300px]'>
+                    <h3 className='text-white font-medium text-xl md:text-2xl lg:text-3xl leading-tight'>{name}</h3>
+                    <p className='mt-3 text-secondary text-sm md:text-base lg:text-lg'>{description}</p>
+                </div>
             </div>
         </motion.div>
     );
 };
 
 const Portfolio = () => {
-    const [current, setCurrent] = useState(0);
-    const cardRefs = useRef([]);
-    const [hasInteracted, setHasInteracted] = useState(false);
-
-    useEffect(() => {
-        if (hasInteracted) {
-            cardRefs.current[current]?.scrollIntoView({
-                behavior: "smooth",
-                inline: "center",
-                block: "nearest"
-            });
-        }
-    }, [current, hasInteracted]);
+    const loopedProjects = [...portfolio, ...portfolio, ...portfolio];
 
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40'>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32'>
             <motion.div variants={textVariant()}>
                 <h2 className={`${styles.sectionText}`}>Portfolio</h2>
             </motion.div>
 
-            <div className='mt-10 md:mt-20 flex flex-col gap-10 md:gap-20'>
-                {portfolio.map((project, index) => (
-                    <ProjectCard key={`project-${index}`} index={index} {...project} />
-                ))}
+            <div className='mt-10 md:mt-20 relative'>
+                <div className='overflow-x-auto pb-4 scrollbar-hide'>
+                    <div className='flex gap-8 min-w-max px-4'>
+                        {loopedProjects.map((project, index) => (
+                            <div key={`project-${index}`} className='w-[300px] flex-shrink-0'>
+                                <ProjectCard index={index} {...project} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

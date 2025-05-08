@@ -72,13 +72,6 @@
 }
 
 
-.parallax__floor {
-    position: absolute;
-    --parallax-speed: 0.25;
-    z-index: 5;
-    padding-top: 700px
-}
-
 
 .parallax__content {
     --parallax-speed: 210;
@@ -91,12 +84,13 @@
 
 .parallax__content_h1
 {
-    margin-left: 50px;
+    margin-left: 200px;
+    margin-top: 50px;
 }
 
 .parallax__content_p {
    top: 150px;
-    left: 200px;
+    left: 300px;
 
 }
 
@@ -247,4 +241,13 @@
         -2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
         -1.8em -1.8em 0 0em #ffffff;
     }
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
 }
