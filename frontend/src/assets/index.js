@@ -18,7 +18,9 @@ import docker from "../assets/logos/docker2.png";
 import css from "../assets/logos/css2.png";
 import c from "../assets/logos/c2.png";
 import javascript from "../assets/logos/js2.png";
+import type from "../assets/logos/type.png";
+import sql from "../assets/logos/sql.png";
 
 export { crm, close, nft, logo, menu, club, rightArrow, leftArrow, java, spring, express, nodejs, postgres, reactLogo, docker,
-css, c, javascript };
+css, c, javascript, type, sql };
 
