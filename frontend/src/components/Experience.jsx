@@ -4,7 +4,7 @@ import SectionWrapper from '../hook/SectionWrapper';
 
 const Experience = () => {
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 relative z-10 bg-primary'>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-32 relative z-10 bg-primary'>
             <motion.div variants={textVariant()} className="relative z-20 bg-primary py-4">
                 <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Experience</h2>
             </motion.div>

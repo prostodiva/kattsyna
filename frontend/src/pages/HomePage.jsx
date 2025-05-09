@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
 import Portfolio from "../components/Portfolio";
 import SkillsSection from "../components/SkillsSection";
+import Footer from "@/components/Footer";
 
 const HomePage = () => {
     const wrapperRef = useRef(null);
@@ -24,11 +25,14 @@ const HomePage = () => {
                 <section id="experience" className='relative z-30 bg-primary mt-[-2px]'>
                     <Experience />
                 </section>
-                <section id="skills" className='relative z-30 bg-primary mt-[-2px] pb-20'>
+                <section id="skills" className='relative z-30 bg-primary mt-[-2px]'>
                     <SkillsSection />
                 </section>
-                <section id="contact" className='relative z-40 bg-primary pb-20'>
+                <section id="contact" className='relative z-40 bg-primary  mt-[-2px] pb-20'>
                     <Contact />
+                </section>
+                <section id="footer" className='relative z-40 bg-secondary mt-[-2px]'>
+                    <Footer />
                 </section>
             </div>
         </div>
