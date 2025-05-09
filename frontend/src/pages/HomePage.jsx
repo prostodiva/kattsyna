@@ -27,7 +27,7 @@ const HomePage = () => {
                 <section id="skills" className='relative z-30 bg-primary mt-[-2px] pb-20'>
                     <SkillsSection />
                 </section>
-                <section id="contact" className='relative z-40 bg-primary'>
+                <section id="contact" className='relative z-40 bg-primary pb-20'>
                     <Contact />
                 </section>
             </div>
