@@ -7,7 +7,7 @@ import {java, spring, express, nodejs, postgres, reactLogo, docker, css, c, java
 
 const SkillCard = ({ icon, title, description}) => {
     return (
-        <div className="bg-secondary w-40 h-40 rounded-2xl flex flex-col items-center justify-center shadow-md hover:shadow-red-500/50 transition-shadow duration-300">
+        <div className="bg-secondary w-40 h-40 rounded-2xl flex flex-col items-center justify-center shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300">
             <div className="mb-1 text-4xl text-red-500">{icon}</div>
             <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
             <p className="text-gray-300 text-sm">{description}</p>
@@ -55,19 +55,19 @@ const skills = [
     {
         icon: <img src={c} alt="C++" className="w-8 h-8" />,
         title: "C++",
-        description: "Backend language",
+        description: "Object-Oriented Programming Language",
         category: "Backend",
     },
     {
         icon: <img src={java} alt="Java" className="w-8 h-8" />,
         title: "Java",
-        description: "Backend language",
+        description: "Object-Oriented Programming Language",
         category: "Backend",
     },
     {
         icon: <img src={javascript} alt="JavaScript" className="w-8 h-8" />,
         title: "JavaScript",
-        description: "Programming language",
+        description: "Object-Oriented Programming Language",
         category: "Frontend",
     },
     {
