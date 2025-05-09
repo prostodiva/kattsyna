@@ -19,6 +19,11 @@ const Experience = () => {
                     <h3 className='text-white text-2xl font-bold mb-4'>Full-Stack Developer</h3>
                     <p className='text-gray-300'>Building scalable web applications and implementing efficient solutions.</p>
                 </div>
+
+                <div className='bg-secondary p-8 rounded-3xl'>
+                    <h3 className='text-white text-2xl font-bold mb-4'>Software Engineer</h3>
+                    <p>Developed a CRM management application with Java Spring Boot</p>
+                </div>
             </div>
         </div>
     );
