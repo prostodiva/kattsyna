@@ -7,7 +7,7 @@ import { portfolio } from "../data/index";
 import { SectionWrapper } from '../hook';
 import { styles } from "../styles/index";
 
-const ProjectCard = ({ index, name, description, image }) => {
+const ProjectCard = ({ index, name, description, image, github }) => {
     const controls = useAnimation();
     const { ref, inView } = useInView({
         threshold: 0.1,
@@ -35,7 +35,15 @@ const ProjectCard = ({ index, name, description, image }) => {
                 />
                 <div className='mt-6 text-center w-full max-w-[300px]  font-helvetica'>
                     <h3 className='text-white font-medium text-xl md:text-2xl lg:text-3xl leading-tight'>{name}</h3>
-                    <p className='mt-3 text-white text-sm md:text-base lg:text-lg'>{description}</p>
+                    <p className='mt-3 text-slate-500 text-sm md:text-base lg:text-lg'>{description}</p>
+                    <a
+                        href={github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
+                    >
+                        View on GitHub
+                    </a>
                 </div>
             </div>
         </motion.div>

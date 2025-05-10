@@ -10,19 +10,19 @@ const Experience = () => {
             </motion.div>
 
             <div className='mt-10 md:mt-20 flex flex-col gap-8 relative z-20'>
-                <div className='bg-secondary p-8 rounded-3xl'>
+                <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
                     <h3 className='text-white text-2xl font-bold mb-4'>Software Engineer</h3>
-                    <p className='text-gray-300'>Full-stack development with focus on React, Node.js, and modern web technologies.</p>
+                    <p className='text-slate-500'>Full-stack development with focus on React, Node.js, and modern web technologies.</p>
                 </div>
                 
-                <div className="bg-secondary p-8 rounded-3xl">
+                <div className="bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300">
                     <h3 className='text-white text-2xl font-bold mb-4'>Full-Stack Developer</h3>
-                    <p className='text-gray-300'>Building scalable web applications and implementing efficient solutions.</p>
+                    <p className='text-slate-500'>Building scalable web applications and implementing efficient solutions.</p>
                 </div>
 
-                <div className='bg-secondary p-8 rounded-3xl'>
+                <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
                     <h3 className='text-white text-2xl font-bold mb-4'>Software Engineer</h3>
-                    <p>Developed a CRM management application with Java Spring Boot</p>
+                    <p className='text-slate-500'>Developed a CRM management application with Java Spring Boot</p>
                 </div>
             </div>
         </div>
