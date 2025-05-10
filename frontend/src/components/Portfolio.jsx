@@ -27,7 +27,7 @@ const ProjectCard = ({ index, name, description, image }) => {
             variants={fadeIn("up", "spring", 0, 0.75)}
             className="w-full flex flex-col items-center"
         >
-            <div className='relative w-full flex flex-col items-center'>
+            <div className='relative w-full flex flex-col items-center shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
                 <img
                     src={image}
                     alt='project_image'
