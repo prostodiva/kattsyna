@@ -15,5 +15,5 @@ export default defineConfig({
         },
         extensions: ['.js', '.jsx', '.json']
     },
-    assetsInclude: ['**/*.glb', '**/*.svg', '**/*.psd']
+    assetsInclude: ['**/*.glb', '**/*.svg', '**/*.psd', '**/*.png']
 });
