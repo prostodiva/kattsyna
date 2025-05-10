@@ -31,7 +31,7 @@ const HomePage = () => {
                 <section id="contact" className='relative z-40 bg-primary  mt-[-2px]'>
                     <Contact />
                 </section>
-                <section id="footer" className='relative z-40 bg-secondary mt-[-2px]'>
+                <section id="footer" className='relative z-40 bg-secondary '>
                     <Footer />
                 </section>
             </div>
