@@ -35,7 +35,7 @@ const ProjectCard = ({ index, name, description, image }) => {
                 />
                 <div className='mt-6 text-center w-full max-w-[300px]  font-helvetica'>
                     <h3 className='text-white font-medium text-xl md:text-2xl lg:text-3xl leading-tight'>{name}</h3>
-                    <p className='mt-3 text-secondary text-sm md:text-base lg:text-lg'>{description}</p>
+                    <p className='mt-3 text-white text-sm md:text-base lg:text-lg'>{description}</p>
                 </div>
             </div>
         </motion.div>

@@ -9,12 +9,12 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #9b6bdf, #b06bdf, #6bb8df, #dfd16b, #df6b9b, #9b6bdf);
+    background: linear-gradient(45deg, #a770ef, #f6d365, #fda085, #fd6e6a);
     background-size: 1200% 1200%;
-    animation: gradientMove 45s ease infinite;
+    animation: gradientMove 12s ease-in-out infinite;
     z-index: 30;
-    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
-    opacity: 0.95;
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 80%);
+    opacity: 0.80;
 }
 
 @keyframes gradientMove {
@@ -67,69 +67,11 @@
     perspective: 10px;
 }
 
-.parallax {
-    position: relative;
-    min-height: 75vh;
-    width: 100vw;
-    max-width: none;
-    left: 50%; /* Center the image horizontally */
-    transform: translateX(-50%); /* Center the image horizontally */
-    display: grid;
-    grid-template-areas: "stack";
-}
-
-.parallax > * {
-    grid-area: stack;
-    transform: translateY(0);
-    transition: transform 0.1s linear;
-}
-
-.parallax > img {
-    width: 100%;
-}
-
-.parallax__bg {
-    position: absolute;
-    width: 100%;
-    object-fit: cover;
-    --parallax-speed: 0.32;
-    z-index: 2;
-}
-
-
-
-.parallax__content {
-    --parallax-speed: 210;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.parallax__content_h1
-{
-    margin-left: 200px;
-    margin-top: 50px;
-}
-
-.parallax__content_p {
-   top: 150px;
-    left: 300px;
-
-}
-
 
 @media (min-width: 1024px) {
     .parallax__content {
         flex-direction: row;
         text-align: left;
-    }
-}
-
-@keyframes parallax {
-    to {
-        transform: translateY(calc(var(--parallax-speed) * 1vh));
     }
 }
 
