@@ -1,5 +1,6 @@
 import "../../index.css";
 import { styles } from "../styles/index"
+import {laptop} from "@/assets";
 
 const Hero = ({ scrollContainer }) => {
     return (
@@ -8,12 +9,8 @@ const Hero = ({ scrollContainer }) => {
                 <div className="w-full h-full animated-gradient"></div>
             </div>
 
-                <div className="absolute z-10 flex flex-col items-start"
-                     style={{
-                         left: "9%",
-                         top: "30%",
-                     }}>
-                    <div className="relative z-10 flex flex-col w-full lg:w-1/2">
+                <div className="relative z-10 flex flex-row items-center w-4/5 mx-auto">
+                    <div className="flex flex-col items-start mr-12">
                         <h1
                             className={styles.sectionText}
                             style={{
@@ -36,7 +33,12 @@ const Hero = ({ scrollContainer }) => {
                 >
                            <p>Crafting efficient code <br /> that solves real-world problems.</p>
                     </div>
+
+                    <div>
+                        <img src={laptop} className="w-[800px] h-auto pt-10 -ml-14" alt="laptop" />
+                    </div>
                 </div>
+
 
         </section>
 

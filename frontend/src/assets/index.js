@@ -22,6 +22,8 @@ import type from "../assets/logos/type.png";
 import sql from "../assets/logos/sql.png";
 import linkedIn from "../assets/logos/linkedIn.png";
 
+import laptop from "../assets/logos/laptop.png";
+
 export { crm, close, nft, logo, menu, club, rightArrow, leftArrow, java, spring, express, nodejs, postgres, reactLogo, docker,
-css, c, javascript, type, sql, linkedIn };
+css, c, javascript, type, sql, linkedIn, laptop };
 
