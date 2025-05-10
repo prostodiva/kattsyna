@@ -54,12 +54,12 @@ const Portfolio = () => {
     const loopedProjects = [...portfolio, ...portfolio, ...portfolio];
 
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32'>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-20'>
             <motion.div variants={textVariant()}>
                 <h2 className={`${styles.sectionText}`}>Portfolio</h2>
             </motion.div>
 
-            <div className='mt-10 md:mt-20 relative'>
+            <div className='mt-12 md:mt-20 relative '>
                 <div className='overflow-x-auto pb-4 scrollbar-hide'>
                     <div className='flex gap-8 min-w-max px-4'>
                         {loopedProjects.map((project, index) => (

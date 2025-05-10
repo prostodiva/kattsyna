@@ -13,7 +13,7 @@
     background-size: 1200% 1200%;
     animation: gradientMove 12s ease-in-out infinite;
     z-index: 30;
-    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 80%);
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 75%);
     opacity: 0.80;
 }
 

@@ -19,7 +19,7 @@ const HomePage = () => {
                 <section id="hero" className='z-10'>
                     <Hero scrollContainer={wrapperRef} />
                 </section>
-                <section id="portfolio" className='relative z-20 bg-primary mt-[-2px]'>
+                <section id="portfolio" className='relative z-9 bg-primary mt-[-2px]'>
                     <Portfolio />
                 </section>
                 <section id="experience" className='relative z-30 bg-primary mt-[-2px]'>

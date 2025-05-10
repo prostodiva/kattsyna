@@ -23,7 +23,7 @@ const profile = {
 
 const Contact = () => {
     return (
-        <div className="w-full px-4 py-8 pb-20 md:pb-32">
+        <div className="w-full px-4 py-8 pb-20 md:pb-32 -mt-32">
             <div className='text-center md:text-left md:px-20 lg:px-40 text-white '>
                 <motion.div variants={textVariant()}>
                     <h2 className={`${styles.sectionText}`}>Hire Me</h2>
