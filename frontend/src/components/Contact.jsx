@@ -30,7 +30,7 @@ const Contact = () => {
                 </motion.div>
             </div>
 
-            <h2 className="text-white text-4xl font-bold mb-8 text-center">I am always up for a chat. Feel free to reach out.</h2>
+            <h2 className="text-white text-4xl font-bold mb-8 text-center font-helvetica">I am always up for a chat. Feel free to reach out.</h2>
             <div className="flex w-full max-w-5xl mx-auto justify-center">
                 <a href="https://www.linkedin.com/in/margarita-kattsyna/" target="_blank" rel="noopener noreferrer" className="block">
                 <ProfileCard {...profile} />

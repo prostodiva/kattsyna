@@ -41,7 +41,7 @@ const NavBar = ({ children }) => {
 
     return (
         <nav
-    className="w-full -top-2 left-16 fixed items-center bg-transparent p-4 sm:px-16 sm:py-6 fixed z-50"
+    className="w-full -top-2 left-16 items-center bg-transparent p-4 sm:px-16 sm:py-6 fixed z-50"
         >
             <ul className='list-none hidden sm:flex flex-row gap-5'>
                 {navLinks.map((nav) => (
