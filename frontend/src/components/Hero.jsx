@@ -1,38 +1,7 @@
 import "../../index.css";
 import { styles } from "../styles/index"
-import laptop from "../assets/3d/laptop.png";
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import * as THREE from 'three';
+import LaptopCanvas from "../components/LaptopModel";
 
-function LaptopImage() {
-    const texture = new THREE.TextureLoader().load(laptop); // If imported
-    return (
-        <mesh>
-            <planeGeometry args={[3, 2]} />
-            <meshBasicMaterial map={texture} transparent />
-        </mesh>
-    )
-}
-
-function LaptopImageViewer() {
-    return (
-        <div style={{ width: '900px', height: '700px' }}>
-            <Canvas camera={{ position: [0, 0, 5] }}>
-                <ambientLight intensity={0.7} />
-                <LaptopImage />
-                <OrbitControls
-                    enablePan={false}
-                    enableZoom={false}
-                    minAzimuthAngle={-0.3927}
-                    maxAzimuthAngle={0.3927}
-                    minPolarAngle={Math.PI / 2}
-                    maxPolarAngle={Math.PI / 2}
-                />
-            </Canvas>
-        </div>
-    )
-}
 
 const Hero = ({ scrollContainer }) => {
     return (
@@ -63,8 +32,13 @@ const Hero = ({ scrollContainer }) => {
                         <p>Crafting efficient code <br /> that solves real-world problems.</p>
                     </div>
                 </div>
-                <div>
-                    <LaptopImageViewer />
+
+                <div className="pt-56"
+                    style={{
+                        width: "950px",
+                        height: "750px"
+                }}>
+                    <LaptopCanvas scrollContainer={scrollContainer} />
                 </div>
 
             </div>
