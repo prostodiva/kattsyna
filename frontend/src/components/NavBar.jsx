@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useRef, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { navLinks } from "../data/index";
 
 const NavBar = ({ children }) => {

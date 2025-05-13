@@ -75,12 +75,12 @@ const LaptopCanvas = ({ scrollContainer }) => {
     }, [scrollContainer]);
 
     return (
-        <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
+        <div className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[700px]">
             <Canvas
                 className='w-full h-full bg-transparent z-10'
                 camera={{
                     position: [0, 2, 10],
-                    fov: 50,
+                    fov: 65,
                     near: 0.1,
                     far: 1000
                 }}
