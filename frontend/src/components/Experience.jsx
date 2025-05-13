@@ -21,8 +21,10 @@ const Experience = () => {
                 </div>
 
                 <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
-                    <h3 className='text-white text-2xl font-bold mb-4'>Software Engineer</h3>
-                    <p className='text-slate-500'>Developed a CRM management application with Java Spring Boot</p>
+                    <h3 className='text-white text-2xl font-bold mb-4'>The Code Base - Computer Science Club Member</h3>
+                    <p className='text-slate-500'>Collaborated with fellow CS club members on various development projects. <br />
+                        Gained hands-on experience in programming, debugging, and agile team collaboration.
+                    </p>
                 </div>
             </div>
         </div>
