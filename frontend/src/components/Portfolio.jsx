@@ -59,7 +59,7 @@ const Portfolio = () => {
                 <h2 className={`${styles.sectionText}`}>Portfolio</h2>
             </motion.div>
 
-            <div className='mt-12 md:mt-20 relative '>
+            <div className='mt-12 md:mt-20 relative'>
                 <div className='overflow-x-auto pb-4 scrollbar-hide'>
                     <div className='flex gap-8 min-w-max px-4'>
                         {loopedProjects.map((project, index) => (

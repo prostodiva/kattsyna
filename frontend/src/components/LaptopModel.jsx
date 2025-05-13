@@ -75,8 +75,9 @@ const LaptopCanvas = ({ scrollContainer }) => {
     }, [scrollContainer]);
 
     return (
+        <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px]">
             <Canvas
-                className='w-full h-screen bg-transparent z-10'
+                className='w-full h-full bg-transparent z-10'
                 camera={{
                     position: [0, 2, 10],
                     fov: 50,
@@ -98,6 +99,7 @@ const LaptopCanvas = ({ scrollContainer }) => {
                     />
                 </Suspense>
             </Canvas>
+        </div>
     );
 };
 
