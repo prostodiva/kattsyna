@@ -34,6 +34,7 @@ const portfolio = [
         description:
             "ClubPage is a full-stack web application designed to facilitate club management, member communication, and event organization. The platform features a real-time chat system, event management, and user authentication.",
         image: club,
+        project_URL: "https://clubpage.pages.dev/",
         github: "https://github.com/prostodiva/clubPage",
     },
     {

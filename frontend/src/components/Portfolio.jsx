@@ -7,7 +7,7 @@ import { portfolio } from "../data/index";
 import { SectionWrapper } from '../hook';
 import { styles } from "../styles/index";
 
-const ProjectCard = ({ index, name, description, image, github }) => {
+const ProjectCard = ({ index, name, description, image, github, project_URL }) => {
     const controls = useAnimation();
     const { ref, inView } = useInView({
         threshold: 0.1,
@@ -28,11 +28,18 @@ const ProjectCard = ({ index, name, description, image, github }) => {
             className="w-full flex flex-col items-center"
         >
             <div className='relative w-full flex flex-col items-center shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
-                <img
-                    src={image}
-                    alt='project_image'
-                    className='w-[300px] h-[200px] object-cover rounded-3xl'
-                />
+                <a 
+                    href={project_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                >
+                    <img
+                        src={image}
+                        alt='project_image'
+                        className='w-[300px] h-[200px] object-cover rounded-3xl'
+                    />
+                </a>
                 <div className='mt-6 text-center w-full max-w-[300px]  font-helvetica'>
                     <h3 className='text-white font-medium text-xl md:text-2xl lg:text-3xl leading-tight'>{name}</h3>
                     <p className='mt-3 text-slate-500 text-sm md:text-base lg:text-lg'>{description}</p>
