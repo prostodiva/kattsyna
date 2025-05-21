@@ -1,11 +1,9 @@
-import { useAnimations, useGLTF } from "@react-three/drei";
+import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 import laptopScene from "../assets/3d/laptop.glb";
-import { OrbitControls } from "@react-three/drei";
 
 const Laptop = ({ scale, position, rotation }) => {
-
     const laptopRef = useRef();
     const { scene, animations } = useGLTF(laptopScene);
     const { actions } = useAnimations(animations, laptopRef);
@@ -29,20 +27,26 @@ const Laptop = ({ scale, position, rotation }) => {
     );
 };
 
-
 const LaptopCanvas = ({ scrollContainer }) => {
-    const [rotationX, setRotationX] = useState(0,2,0);
-    const [rotationY, setRotationY] = useState(2,2,2);
+    const [rotationX, setRotationX] = useState(0);
+    const [rotationY, setRotationY] = useState(0);
     const [scale, setScale] = useState([2, 2, 2]);
     const [position, setPosition] = useState([0, 0, 0]);
+    const scrollTimeout = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = scrollContainer.current.scrollTop;
-            const rotationXValue = scrollTop * -0.0006;
-            const rotationYValue = scrollTop * -0.00075;
-            setRotationX(rotationXValue);
-            setRotationY(rotationYValue);
+            if (scrollTimeout.current) {
+                clearTimeout(scrollTimeout.current);
+            }
+
+            scrollTimeout.current = setTimeout(() => {
+                const scrollTop = window.scrollY;
+                const rotationXValue = scrollTop * -0.0006;
+                const rotationYValue = scrollTop * -0.00075;
+                setRotationX(rotationXValue);
+                setRotationY(rotationYValue);
+            }, 16); // roughly one frame at 60fps
         };
 
         const handleResize = () => {
@@ -65,14 +69,17 @@ const LaptopCanvas = ({ scrollContainer }) => {
         };
 
         handleResize();
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         window.addEventListener("resize", handleResize);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("resize", handleResize);
+            if (scrollTimeout.current) {
+                clearTimeout(scrollTimeout.current);
+            }
         }
-    }, [scrollContainer]);
+    }, []);
 
     return (
         <div className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[700px]">
@@ -91,7 +98,16 @@ const LaptopCanvas = ({ scrollContainer }) => {
                     <pointLight position={[10, 5, 10]} intensity={2} />
                     <spotLight position={[0, 50, 10]} angle={0.15} penumbra={1} intensity={2} />
                     <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
-                    <OrbitControls enablePan={false} enableZoom={false} />
+                    <OrbitControls 
+                        enablePan={false} 
+                        enableZoom={false}
+                        enableRotate={true}
+                        autoRotate={false}
+                        minPolarAngle={Math.PI / 4}
+                        maxPolarAngle={Math.PI / 2}
+                        minAzimuthAngle={-Math.PI / 4}
+                        maxAzimuthAngle={Math.PI / 4}
+                    />
                     <Laptop
                         scale={scale}
                         position={position}

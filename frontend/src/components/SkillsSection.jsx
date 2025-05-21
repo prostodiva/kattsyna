@@ -95,7 +95,7 @@ const SkillsSection = () => {
         <div className="w-full px-4 py-0 pb-32 -mt-20">
             <div className='text-center md:text-left md:px-20 lg:px-40 text-white'>
                 <motion.div variants={textVariant()}>
-                    <h2 className={`${styles.sectionText}`}>Skills</h2>
+                    <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Skills</h2>
                 </motion.div>
             </div>
 
