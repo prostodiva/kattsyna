@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    overflow-x: hidden;
+}
+
 .animated-gradient {
     position: absolute;
     inset: 0;
@@ -17,11 +21,9 @@
     opacity: 0.80;
 }
 
-
-
 @media (max-width: 640px) {
     .animated-gradient {
-        clip-path: polygon(0 0, 100% 0, 100% 100px, 0 150px);
+        clip-path: polygon(0 0, 100% 0, 100% 120px, 0 180px);
     }
 }
 

@@ -5,7 +5,7 @@ import { styles } from "../styles/index";
 
 const Hero = ({ scrollContainer }) => {
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center bg-transparent">
+        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-primary">
             <div className="absolute inset-0 w-full h-full animated-gradient z-0"></div>
 
             <div className="relative z-10 flex flex-row items-center w-4/5 mx-auto">
@@ -44,7 +44,8 @@ const Hero = ({ scrollContainer }) => {
                         </div>
                     </div>
 
-                    <div className="relative w-[300px] h-[250px] sm:w-[500px] sm:h-[400px] md:w-[700px] md:h-[500px] lg:w-[950px] lg:h-[750px]">
+                <div
+                    className="relative w-[90vw] max-w-[350px] h-[200px] sm:w-[500px] sm:h-[400px] md:w-[700px] md:h-[500px] lg:w-[950px] lg:h-[750px]">
                         <LaptopCanvas scrollContainer={scrollContainer} />
                     </div>
             </div>
