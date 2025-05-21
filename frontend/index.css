@@ -17,6 +17,14 @@
     opacity: 0.80;
 }
 
+
+
+@media (max-width: 640px) {
+    .animated-gradient {
+        clip-path: polygon(0 0, 100% 0, 100% 100px, 0 150px);
+    }
+}
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;

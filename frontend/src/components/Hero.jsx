@@ -44,11 +44,7 @@ const Hero = ({ scrollContainer }) => {
                         </div>
                     </div>
 
-                    <div className="relative"
-                        style={{
-                            width: "950px",
-                            height: "750px"
-                    }}>
+                    <div className="relative w-[300px] h-[250px] sm:w-[500px] sm:h-[400px] md:w-[700px] md:h-[500px] lg:w-[950px] lg:h-[750px]">
                         <LaptopCanvas scrollContainer={scrollContainer} />
                     </div>
             </div>
