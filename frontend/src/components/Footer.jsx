@@ -1,6 +1,5 @@
 import React from "react";
 import  SectionWrapper  from "../hook/SectionWrapper"
-import { github } from "@/assets"
 
 const Footer = () => {
     return (

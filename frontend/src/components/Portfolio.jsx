@@ -47,6 +47,7 @@ const ProjectCard = ({ index, name, description, image, github, project_URL }) =
                         href={github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="My github project repo"
                         className="inline-block mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
                     >
                         View on GitHub

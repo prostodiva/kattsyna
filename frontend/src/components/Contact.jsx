@@ -53,13 +53,13 @@ const Contact = () => {
 
             <div className="flex flex-col md:flex-row justify-center gap-6 w-full max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 gap-6">
-                    <a href="https://www.linkedin.com/in/margarita-kattsyna/" target="_blank" rel="noopener noreferrer" className="block">
+                    <a href="https://www.linkedin.com/in/margarita-kattsyna/" target="_blank" rel="noopener noreferrer" className="block" aria-label="My linkedIn profile">
                         <ProfileCard {...profile} />
                     </a>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6">
-                    <a href="#" onClick={handleClick} className="block">
+                    <a href="#" onClick={handleClick} className="block" aria-label="View and download my resume">
                         <ResumeCard {...resume} />
                     </a>
                 </div>
