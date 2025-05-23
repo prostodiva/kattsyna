@@ -64,7 +64,7 @@ const LaptopCanvas = ({ scrollContainer }) => {
                 setPosition([0.2, -0.5, 0]);
             } else {
                 setScale([2,2,2]);
-                setPosition([0.2,-0.7,0]);
+                setPosition([0, -0.5, 0]);
             }
         };
 
