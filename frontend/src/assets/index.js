@@ -22,8 +22,9 @@ import reactLogo from "../assets/logos/react2.png";
 import spring from "../assets/logos/spring.png";
 import sql from "../assets/logos/sql.png";
 import type from "../assets/logos/type.png";
+import briefs from "../assets/dev-briefs.png";
 
 import github from "../assets/logos/github.png";
 
-export { c, close, club, crm, css, docker, express, github, java, javascript, leftArrow, linkedIn, logo, menu, nft, nodejs, postgres, reactLogo, resumePDF, rightArrow, spring, sql, type };
+export { c, close, club, crm, css, docker, express, github, java, javascript, leftArrow, linkedIn, logo, menu, nft, nodejs, postgres, reactLogo, resumePDF, rightArrow, spring, sql, type, briefs };
 

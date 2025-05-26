@@ -2,6 +2,7 @@ import {
     crm,
     nft,
     club,
+    briefs
 } from "../assets";
 
 export const navLinks = [
@@ -43,6 +44,13 @@ const portfolio = [
             "A decentralized NFT marketplace built on the Solana blockchain, featuring a C++ backend and modern React frontend.",
         image: nft,
         github: "https://github.com/prostodiva/nftUsingAPI",
+    },
+    {
+        name: "Dev-Briefs",
+        description: "Rita's Tech Journey: From Code to Career",
+        image: briefs,
+        project_URL: "https://dev-briefs.com/",
+        github: "https://github.com/prostodiva/dev-briefs",
     },
     {
         name: "CRM",
