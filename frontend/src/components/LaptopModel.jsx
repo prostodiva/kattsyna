@@ -52,16 +52,16 @@ const LaptopCanvas = ({ scrollContainer }) => {
         const handleResize = () => {
             if (window.innerWidth < 768) {
                 setScale([1,1,1]);
-                setPosition([0.2, -0.2, 0]);
+                setPosition([0, -0.2, 0]);
             } else if (window.innerWidth < 1024) {
                 setScale([1.33,1.33,1.33]);
-                setPosition([0.2, -0.3, 0]);
+                setPosition([0, -0.3, 0]);
             } else if (window.innerWidth < 1280) {
                 setScale([1.5,1.5,1.5]);
-                setPosition([0.2, -0.4, 0]);
+                setPosition([0, -0.4, 0]);
             } else if (window.innerWidth < 1536) {
                 setScale([1.66,1.66,1.66]);
-                setPosition([0.2, -0.5, 0]);
+                setPosition([0, -0.5, 0]);
             } else {
                 setScale([2,2,2]);
                 setPosition([0, -0.5, 0]);
@@ -84,7 +84,7 @@ const LaptopCanvas = ({ scrollContainer }) => {
     return (
         <div className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[700px]">
             <Canvas
-                className='w-full h-full bg-transparent z-10 mt-10 ml-16'
+                className='w-full h-full bg-transparent z-10 mt-10'
                 camera={{
                     position: [0, 2, 10],
                     fov: 65,

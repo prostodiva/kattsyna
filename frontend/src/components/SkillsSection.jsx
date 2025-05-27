@@ -55,19 +55,19 @@ const skills = [
     {
         icon: <img src={c} alt="C++" className="w-8 h-8" />,
         title: "C++",
-        description: "Object-Oriented Programming Language",
+        description: "OOP Language",
         category: "Backend",
     },
     {
         icon: <img src={java} alt="Java" className="w-8 h-8" />,
         title: "Java",
-        description: "Object-Oriented Programming Language",
+        description: "OOP Language",
         category: "Backend",
     },
     {
         icon: <img src={javascript} alt="JavaScript" className="w-8 h-8" />,
         title: "JavaScript",
-        description: "Object-Oriented Programming Language",
+        description: "OOP Language",
         category: "Frontend",
     },
     {
@@ -108,7 +108,7 @@ const SkillsSection = () => {
                     ))}
             </div>
 
-            <h2 className="text-white text-4xl font-bold mb-8 text-center">Frontend</h2>
+            <h2 className="text-white text-4xl font-bold mb-5 text-center mt-5">Frontend</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-5xl mx-auto">
                 {skills
                     .filter(skill => skill.category === "Frontend")
@@ -117,7 +117,7 @@ const SkillsSection = () => {
                     ))}
             </div>
 
-            <h2 className="text-white text-4xl font-bold mb-8 text-center">Other Tools</h2>
+            <h2 className="text-white text-4xl font-bold mb-5 text-center mt-5">Other Tools</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
                 {skills
                     .filter(skill => skill.category === "Other Tools")
