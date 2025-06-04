@@ -67,7 +67,7 @@ const skills = [
     {
         icon: <img src={javascript} alt="JavaScript" className="w-8 h-8" />,
         title: "JavaScript",
-        description: "OOP Language",
+        description: "Dynamic Language",
         category: "Frontend",
     },
     {
