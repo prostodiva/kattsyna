@@ -1,6 +1,6 @@
 import { fadeIn, textVariant } from "@/utils/motion";
 import { motion, useAnimation } from "framer-motion";
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import "../../index.css";
 import { portfolio } from "../data/index";
@@ -12,10 +12,17 @@ const ProjectCard = ({ index, name, description, image, github, project_URL}) =>
     const { ref, inView } = useInView({
         threshold: 0.1,
     });
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(() => {
+        // Initialize from localStorage or 0 if not found
+        const savedCount = localStorage.getItem(`github-click-count-${name}`);
+        return savedCount ? parseInt(savedCount) : 0;
+    });
 
     const handleClick = () => {
-        setCount(count + 1);
+        const newCount = count + 1;
+        setCount(newCount);
+        // Save to localStorage with project name as key
+        localStorage.setItem(`github-click-count-${name}`, newCount.toString());
     }
 
     useEffect(() => {
