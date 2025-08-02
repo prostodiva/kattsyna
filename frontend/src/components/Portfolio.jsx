@@ -1,6 +1,6 @@
 import { fadeIn, textVariant } from "@/utils/motion";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import {useEffect, useRef, useState} from "react";
 import { useInView } from "react-intersection-observer";
 import "../../index.css";
 import { portfolio } from "../data/index";
@@ -12,6 +12,11 @@ const ProjectCard = ({ index, name, description, image, github, project_URL}) =>
     const { ref, inView } = useInView({
         threshold: 0.1,
     });
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+        setCount(count + 1);
+    }
 
     useEffect(() => {
         if (inView) {
@@ -49,9 +54,11 @@ const ProjectCard = ({ index, name, description, image, github, project_URL}) =>
                         rel="noopener noreferrer"
                         aria-label="My github project repo"
                         className="inline-block mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
+                        onClick={handleClick}
                     >
                         View on GitHub
                     </a>
+                    <div>show count: {count}</div>
                 </div>
             </div>
         </motion.div>
