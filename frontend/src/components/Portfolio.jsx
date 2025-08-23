@@ -12,11 +12,6 @@ const ProjectCard = ({ index, name, description, image, github, project_URL}) =>
     const { ref, inView } = useInView({
         threshold: 0.1,
     });
-    const [count, setCount] = useState(() => {
-        // Initialize from localStorage or 0 if not found
-        const savedCount = localStorage.getItem(`github-click-count-${name}`);
-        return savedCount ? parseInt(savedCount) : 0;
-    });
 
     const handleClick = () => {
         const newCount = count + 1;
@@ -65,7 +60,6 @@ const ProjectCard = ({ index, name, description, image, github, project_URL}) =>
                     >
                         View on GitHub
                     </a>
-                    <div>show count: {count}</div>
                 </div>
             </div>
         </motion.div>
