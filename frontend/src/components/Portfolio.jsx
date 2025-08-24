@@ -1,89 +1,39 @@
-import { fadeIn, textVariant } from "@/utils/motion";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { textVariant } from "@/utils/motion";
+import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import "../../index.css";
-import { portfolio } from "../data/index";
+import ProjectCard from "../components/ProjectCard";
+import { portfolio } from "../data";
 import { SectionWrapper } from '../hook';
 import { styles } from "../styles/index";
 
-const ProjectCard = ({ index, name, description, image, github, project_URL}) => {
-    const controls = useAnimation();
-    const { ref, inView } = useInView({
-        threshold: 0.1,
-    });
-
-    const handleClick = () => {
-        const newCount = count + 1;
-        setCount(newCount);
-        // Save to localStorage with project name as key
-        localStorage.setItem(`github-click-count-${name}`, newCount.toString());
-    }
-
-    useEffect(() => {
-        if (inView) {
-            controls.start("show");
-        }
-    }, [controls, inView]);
-
-    return (
-        <motion.div
-            ref={ref}
-            animate={controls}
-            initial="hidden"
-            variants={fadeIn("up", "spring", 0, 0.75)}
-            className="w-full flex flex-col items-center"
-        >
-            <div className='relative w-full flex flex-col items-center shadow-md hover:shadow-2xl hover:shadow-purple-800 hover:-translate-y-2 transition-all duration-300'>
-                <a
-                    href={project_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="dev-briefs project link"
-                >
-                    <img
-                        src={image}
-                        alt='project_image'
-                        className='w-[300px] h-[200px] object-cover rounded-3xl'
-                    />
-                </a>
-                <div className='mt-6 text-center w-full max-w-[300px] font-helvetica'>
-                    <h3 className='text-white font-medium text-xl md:text-2xl lg:text-3xl leading-tight'>{name}</h3>
-                    <p className='mt-3 text-slate-500 text-sm md:text-base lg:text-lg'>{description}</p>
-                    <a
-                        href={github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="My github project repo"
-                        className="inline-block mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
-                        onClick={handleClick}
-                    >
-                        View on GitHub
-                    </a>
-                </div>
-            </div>
-        </motion.div>
-    );
-};
-
 const Portfolio = () => {
     const scrollContainerRef = useRef(null);
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(true);
     const loopedProjects = [...portfolio, ...portfolio, ...portfolio];
 
-    useEffect(() => {
-        const scrollContainer = scrollContainerRef.current;
-        if (!scrollContainer) return;
+    const scrollLeft = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+            updateScrollButtons();
+        }
+    };
 
-        const handleWheel = (e) => {
-            if (e.deltaY !== 0) {
-                e.preventDefault();
-                scrollContainer.scrollLeft += e.deltaY;
-            }
-        };
+    const scrollRight = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+            updateScrollButtons();
+        }
+    };
 
-        scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
-        return () => scrollContainer.removeEventListener('wheel', handleWheel);
-    }, []);
+    const updateScrollButtons = () => {
+        if (scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            setCanScrollLeft(scrollLeft > 0);
+            setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+        }
+    };
 
     return (
         <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
@@ -91,11 +41,42 @@ const Portfolio = () => {
                 <h2 className={`${styles.sectionText}`}>Portfolio</h2>
             </motion.div>
 
-            <div className='mt-12 md:mt-20 relative'>
+            <div className='mt-12 md:pt-20 relative'>
+                {/* Navigation Buttons */}
+                <div className="flex justify-between items-center mb-4">
+                    <button
+                        onClick={scrollLeft}
+                        disabled={!canScrollLeft}
+                        className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                            canScrollLeft 
+                                ? 'bg-secondary hover:bg-quaternary text-white' 
+                                : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                        }`}
+                        aria-label="Scroll left"
+                    >
+                        ← Previous
+                    </button>
+                    
+                    <button
+                        onClick={scrollRight}
+                        disabled={!canScrollRight}
+                        className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                            canScrollRight 
+                                ? 'bg-secondary hover:bg-quaternary text-white' 
+                                : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                        }`}
+                        aria-label="Scroll right"
+                    >
+                        Next →
+                    </button>
+                </div>
+
+                {/* Portfolio Cards Container */}
                 <div
                     ref={scrollContainerRef}
                     className='overflow-x-auto pb-4 scrollbar-hide'
                     style={{ scrollBehavior: 'smooth' }}
+                    onScroll={updateScrollButtons}
                 >
                     <div className='flex gap-8 min-w-max px-4'>
                         {loopedProjects.map((project, index) => (
@@ -104,6 +85,25 @@ const Portfolio = () => {
                             </div>
                         ))}
                     </div>
+                </div>
+
+                {/* Scroll Indicators */}
+                <div className="flex justify-center mt-4 space-x-2">
+                    {Array.from({ length: Math.ceil(loopedProjects.length / 4) }, (_, i) => (
+                        <button
+                            key={i}
+                            onClick={() => {
+                                if (scrollContainerRef.current) {
+                                    scrollContainerRef.current.scrollTo({
+                                        left: i * 1200, // 4 cards * 300px width + gaps
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }}
+                            className="w-3 h-3 rounded-full bg-gray-600 hover:bg-quaternary transition-colors"
+                            aria-label={`Go to page ${i + 1}`}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { navLinks } from "../data/index";
+import { navLinks } from "../data";
 
 const NavBar = ({ children }) => {
     const [active, setActive] = useState("hero");

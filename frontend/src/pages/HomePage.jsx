@@ -16,7 +16,7 @@ const HomePage = () => {
                 <section id="navbar" className="fixed top-0 left-0 right-0 z-50 bg-transparent">
                     <NavBar />
                 </section>
-                <div className='relative pt-[80px]'>
+                <div>
                     <section id="hero" className='relative'>
                         <Hero scrollContainer={wrapperRef} />
                     </section>
