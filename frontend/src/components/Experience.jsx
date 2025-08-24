@@ -4,7 +4,7 @@ import SectionWrapper from '../hook/SectionWrapper';
 
 const Experience = () => {
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-20'>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
             <motion.div variants={textVariant()}>
                 <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Experience</h2>
             </motion.div>
@@ -24,6 +24,12 @@ const Experience = () => {
                     <h3 className='text-white text-2xl font-bold mb-4'>Computer Science Club Member</h3>
                     <p className='text-slate-500'>Collaborated with fellow CS club members on various development projects. <br />
                         Gained hands-on experience in programming, debugging, and agile team collaboration.
+                    </p>
+                </div>
+
+                <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
+                    <h3 className='text-white text-2xl font-bold mb-4'>Vice President of the Computer Science Club</h3>
+                    <p className='text-slate-500'>Organized and led computer science workshops and activities for GCC students.
                     </p>
                 </div>
             </div>

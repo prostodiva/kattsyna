@@ -36,7 +36,7 @@ const Portfolio = () => {
     };
 
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-20'>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
             <motion.div
                 initial="hidden"
                 animate="show"
