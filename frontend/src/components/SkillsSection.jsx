@@ -1,17 +1,13 @@
-import { textVariant } from "@/utils/motion";
-import { motion } from "framer-motion";
-import React from "react";
 import { skills } from "@/data";
+import React from "react";
 import SectionWrapper from '../hook/SectionWrapper';
 import SkillCard from "./SkillCard";
 
 const SkillsSection = () => {
     return (
-        <div className="w-full px-4 py-0 pb-32 -mt-20">
+        <div className="w-full px-4 py-0 pb-64 -mt-20">
             <div className='text-center md:text-left md:px-20 lg:px-40 text-white'>
-                <motion.div variants={textVariant()}>
-                    <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Skills</h2>
-                </motion.div>
+                <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Skills</h2>
             </div>
 
             <h2 className="text-white text-4xl font-bold mb-8 text-center">Backend</h2>

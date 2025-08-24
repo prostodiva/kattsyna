@@ -1,4 +1,4 @@
-import { textVariant } from "@/utils/motion";
+import { staggerContainer } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import "../../index.css";
@@ -36,12 +36,16 @@ const Portfolio = () => {
     };
 
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
-            <motion.div variants={textVariant()}>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-20'>
+            <motion.div
+                initial="hidden"
+                animate="show"
+                variants={staggerContainer()}
+            >
                 <h2 className={`${styles.sectionText}`}>Portfolio</h2>
             </motion.div>
 
-            <div className='mt-12 md:pt-20 relative'>
+            <div className='mt-4 md:pt-5 relative'>
                 {/* Navigation Buttons */}
                 <div className="flex justify-between items-center mb-4">
                     <button
