@@ -1,7 +1,7 @@
 
+import { useScrollAnimation } from "@/hook";
 import { motion } from "framer-motion";
 import SectionWrapper from '../hook/SectionWrapper';
-import {useScrollAnimation} from "@/hook";
 
 const Experience = () => {
     const { ref, scrollVariants, initial, whileInView, viewport } = useScrollAnimation({
@@ -11,7 +11,7 @@ const Experience = () => {
     });
 
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
+        <div className='text-center md:text-left px-4 md:px-20 lg:px-40 text-white pb-20 md:pb-32 pt-10 md:-mt-10'>
             <motion.div
                 ref={ref}
                 variants={scrollVariants}
@@ -19,32 +19,32 @@ const Experience = () => {
                 whileInView={whileInView}
                 viewport={viewport}
             >
-                <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Experience</h2>
+                <h2 className="text-white font-bold text-3xl sm:text-4xl md:text-[80px] sm:text-[50px] text-[40px]">Experience</h2>
 
-            <div className='mt-4 md:pt-5 flex flex-col gap-8 relative z-20'>
-                <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
-                    <h3 className='text-white text-2xl font-bold mb-4'>Software Engineer</h3>
-                    <p className='text-slate-500'>Full-stack development with focus on React, Node.js, and modern web technologies.</p>
-                </div>
-                
-                <div className="bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300">
-                    <h3 className='text-white text-2xl font-bold mb-4'>Full-Stack Developer</h3>
-                    <p className='text-slate-500'>Building scalable web applications and implementing efficient solutions.</p>
-                </div>
+                <div className='mt-4 md:pt-5 flex flex-col gap-6 sm:gap-8 relative z-20'>
+                    <div className='bg-secondary p-4 sm:p-8 rounded-3xl shadow-md hover:shadow-2xl hover:shadow-purple-800 hover:-translate-y-2 transition-all duration-300'>
+                        <h3 className='text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4'>Software Engineer</h3>
+                        <p className='text-slate-500 text-sm sm:text-base'>Full-stack development with focus on React, Node.js, and modern web technologies.</p>
+                    </div>
+                    
+                    <div className="bg-secondary p-4 sm:p-8 rounded-3xl shadow-md hover:shadow-2xl hover:shadow-purple-800 hover:-translate-y-2 transition-all duration-300">
+                        <h3 className='text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4'>Full-Stack Developer</h3>
+                        <p className='text-slate-500 text-sm sm:text-base'>Building scalable web applications and implementing efficient solutions.</p>
+                    </div>
 
-                <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
-                    <h3 className='text-white text-2xl font-bold mb-4'>Computer Science Club Member</h3>
-                    <p className='text-slate-500'>Collaborated with fellow CS club members on various development projects. <br />
-                        Gained hands-on experience in programming, debugging, and agile team collaboration.
-                    </p>
-                </div>
+                    <div className='bg-secondary p-4 sm:p-8 rounded-3xl shadow-md hover:shadow-2xl hover:shadow-purple-800 hover:-translate-y-2 transition-all duration-300'>
+                        <h3 className='text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4'>Computer Science Club Member</h3>
+                        <p className='text-slate-500 text-sm sm:text-base'>Collaborated with fellow CS club members on various development projects. <br />
+                            Gained hands-on experience in programming, debugging, and agile team collaboration.
+                        </p>
+                    </div>
 
-                <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
-                    <h3 className='text-white text-2xl font-bold mb-4'>Vice President of the Computer Science Club</h3>
-                    <p className='text-slate-500'>Organized and led computer science workshops and activities for GCC students.
-                    </p>
+                    <div className='bg-secondary p-4 sm:p-8 rounded-3xl shadow-md hover:shadow-2xl hover:shadow-purple-800 hover:-translate-y-2 transition-all duration-300'>
+                        <h3 className='text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4'>Vice President of the Computer Science Club</h3>
+                        <p className='text-slate-500 text-sm sm:text-base'>Organized and led computer science workshops and activities for GCC students.
+                        </p>
+                    </div>
                 </div>
-            </div>
             </motion.div>
         </div>
     );

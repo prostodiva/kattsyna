@@ -40,7 +40,7 @@ const Portfolio = () => {
     };
 
     return (
-        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
+        <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10 overflow-hidden'>
             <motion.div
                 ref={ref}
                 variants={scrollVariants}
@@ -54,7 +54,7 @@ const Portfolio = () => {
             {/* Hide navigation buttons on mobile, show scroll indicators instead */}
             <div className='mt-4 md:pt-5 relative'>
                 {/* Navigation Buttons - Hidden on mobile */}
-                <div className="hidden md:flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center mb-4">
                     <button
                         onClick={scrollLeft}
                         disabled={!canScrollLeft}
@@ -90,7 +90,7 @@ const Portfolio = () => {
                 {/* Portfolio Cards Container */}
                 <div
                     ref={scrollContainerRef}
-                    className='overflow-x-auto pb-4 scrollbar-hide touch-pan-x'
+                    className='overflow-x-auto overflow-y-hidden pb-4 scrollbar-hide'
                     style={{ scrollBehavior: 'smooth' }}
                     onScroll={updateScrollButtons}
                 >

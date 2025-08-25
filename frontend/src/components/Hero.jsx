@@ -18,7 +18,7 @@ const Hero = ({ scrollContainer }) => {
                     </div>
                 </div>
 
-                <div className="relative flex-1 h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[750px] w-full">
+                <div className="relative flex-1 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px] xl:h-[750px] w-full">
                     <LaptopCanvas scrollContainer={scrollContainer} />
                 </div>
             </div>
