@@ -1,13 +1,25 @@
-import { textVariant } from "@/utils/motion";
+
 import { motion } from "framer-motion";
 import SectionWrapper from '../hook/SectionWrapper';
+import {useScrollAnimation} from "@/hook";
 
 const Experience = () => {
+    const { ref, scrollVariants, initial, whileInView, viewport } = useScrollAnimation({
+        y: 50,
+        duration: 0.6,
+        delay: 0.2
+    });
+
     return (
         <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
-            <motion.div variants={textVariant()}>
+            <motion.div
+                ref={ref}
+                variants={scrollVariants}
+                initial={initial}
+                whileInView={whileInView}
+                viewport={viewport}
+            >
                 <h2 className="text-white font-bold md:text-[80px] sm:text-[50px] text-[40px]">Experience</h2>
-            </motion.div>
 
             <div className='mt-4 md:pt-5 flex flex-col gap-8 relative z-20'>
                 <div className='bg-secondary p-8 rounded-3xl shadow-md  hover:shadow-2xl hover:shadow-purple-800  hover:-translate-y-2 transition-all duration-300'>
@@ -33,6 +45,7 @@ const Experience = () => {
                     </p>
                 </div>
             </div>
+            </motion.div>
         </div>
     );
 };

@@ -1,13 +1,17 @@
-import { staggerContainer } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import "../../index.css";
 import ProjectCard from "../components/ProjectCard";
 import { portfolio } from "../data";
-import { SectionWrapper } from '../hook';
+import { SectionWrapper, useScrollAnimation } from '../hook';
 import { styles } from "../styles/index";
 
 const Portfolio = () => {
+    const { ref, scrollVariants, initial, whileInView, viewport } = useScrollAnimation({
+        y: 50,
+        duration: 0.6,
+        delay: 0.2
+    });
     const scrollContainerRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
@@ -38,16 +42,19 @@ const Portfolio = () => {
     return (
         <div className='text-center md:text-left md:px-20 lg:px-40 text-white pb-20 md:pb-32 -mt-10'>
             <motion.div
-                initial="hidden"
-                animate="show"
-                variants={staggerContainer()}
+                ref={ref}
+                variants={scrollVariants}
+                initial={initial}
+                whileInView={whileInView}
+                viewport={viewport}
             >
                 <h2 className={`${styles.sectionText}`}>Portfolio</h2>
             </motion.div>
 
+            {/* Hide navigation buttons on mobile, show scroll indicators instead */}
             <div className='mt-4 md:pt-5 relative'>
-                {/* Navigation Buttons */}
-                <div className="flex justify-between items-center mb-4">
+                {/* Navigation Buttons - Hidden on mobile */}
+                <div className="hidden md:flex justify-between items-center mb-4">
                     <button
                         onClick={scrollLeft}
                         disabled={!canScrollLeft}
@@ -75,10 +82,15 @@ const Portfolio = () => {
                     </button>
                 </div>
 
+                {/* Mobile Scroll Hint */}
+                <div className="md:hidden text-center text-sm text-gray-400 mb-4">
+                    Swipe to explore projects →
+                </div>
+                
                 {/* Portfolio Cards Container */}
                 <div
                     ref={scrollContainerRef}
-                    className='overflow-x-auto pb-4 scrollbar-hide'
+                    className='overflow-x-auto pb-4 scrollbar-hide touch-pan-x'
                     style={{ scrollBehavior: 'smooth' }}
                     onScroll={updateScrollButtons}
                 >

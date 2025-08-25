@@ -1,0 +1,25 @@
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+    .hover\:bg-quaternary:hover {
+        background-color: rgb(169 142 192);
+    }
+}
+
+/* Mobile scroll improvements */
+@media (max-width: 768px) {
+    .touch-pan-x {
+        overscroll-behavior-x: contain;
+    }
+}
