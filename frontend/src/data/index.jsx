@@ -11,6 +11,7 @@ import {
     club,
     crm,
     nft,
+    chatbot
 } from "../assets";
 
 const profile = {
@@ -76,6 +77,13 @@ const portfolio = [
         image: crm,
         github: "https://github.com/prostodiva/CRM",
     },
+    {
+        name: "AI-assistent",
+        description:
+        "A full-stack web application that combines AI chatbot capabilities with Google Calendar integration, enabling users to manage their schedule through natural language conversations.",
+        img: chatbot,
+        github: "https://github.com/prostodiva/chatbot-v2",
+    }
 ];
 
 const skills = [

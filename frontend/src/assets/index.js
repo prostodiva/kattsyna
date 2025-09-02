@@ -4,6 +4,7 @@ import club from "./club.png";
 import crm from "./crm.png";
 import nft from "./nft.png";
 import briefs from "../assets/dev-briefs.png";
+import chatbot from "../assets/chatbot.png";
 
-export {  club, crm, nft, resumePDF, briefs };
+export {  club, crm, nft, resumePDF, briefs, chatbot };
 
