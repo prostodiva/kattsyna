@@ -78,10 +78,10 @@ const portfolio = [
         github: "https://github.com/prostodiva/CRM",
     },
     {
-        name: "AI-assistent",
+        name: "AI-assistant",
         description:
         "A full-stack web application that combines AI chatbot capabilities with Google Calendar integration, enabling users to manage their schedule through natural language conversations.",
-        img: chatbot,
+        image: chatbot,
         github: "https://github.com/prostodiva/chatbot-v2",
     }
 ];
