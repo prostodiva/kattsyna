@@ -7,6 +7,7 @@ import { DiPostgresql, DiMysql, DiMongodb } from "react-icons/di";
 import { CiLinkedin } from "react-icons/ci";
 
 import {
+    nfl,
     briefs,
     club,
     crm,
@@ -49,6 +50,13 @@ export const navLinks = [
 
 
 const portfolio = [
+    {
+        name: "NFL Journey Planner",
+        description: "A full-stack web application designed to help football fans plan optimal stadium visits using advanced graph algorithms and data structures.",
+        image: nfl,
+        project_URL: "https://nfl-vacation.pages.dev/",
+        github: "https://github.com/prostodiva/nfl-vacation",
+    },
     {
         name: "Modern Club Management Platform",
         description:
